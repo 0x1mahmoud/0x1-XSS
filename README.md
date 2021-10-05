@@ -7,7 +7,7 @@
 # Installation & How to use?
 1. `git clone https://github.com/0x1mahmoud/0x1-XSS.git`
 2. `cd 0x1-XSS`
-3. `python 0x1-xss.py`
+3. `python3 0x1-xss.py`
 4. `Enter The Target URL: Type here the full url with the vulnerable parameters such as: https://target.com?xss=1`
 5. `Enter The Target URL: https://target.com?xss=1`
 --------------------------------------------------------------------

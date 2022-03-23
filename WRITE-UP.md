@@ -65,5 +65,5 @@ In Server-Side Template Injection (SSTI) or Static Code Injection I've used the 
 
 Ways of fixing:
 
-1- The Templates should not be created from user-controlled input. User input should be passed to the template using template parameters.
-2- Sandboxing: execute user’s code in a sandboxed environment; though some of these environments can be bypassed, they are still considered a protection mechanism to reduce the risk of the SSTI vulnerability.
+- The Templates should not be created from user-controlled input. User input should be passed to the template using template parameters.
+- Sandboxing: execute user’s code in a sandboxed environment; though some of these environments can be bypassed, they are still considered a protection mechanism to reduce the risk of the SSTI vulnerability.

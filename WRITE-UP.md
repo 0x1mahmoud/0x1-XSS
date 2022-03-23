@@ -31,6 +31,8 @@ http://127.0.0.1:8080/hackerone=%3Cimg%20src=pop%20onerror=alert(document.cookie
 
 Here the way of fixing the the 2 vulnerabilities:
 
+The Vulnerable file: "appsec-exercise.py"
+
 1- Fixed Lines
 
 `User {{username}} does not exist` *the fixed line (1)*
@@ -90,6 +92,8 @@ In Server-Side Template Injection (SSTI) or Static Code Injection I've used the 
 
 
 Here the way of fixing the the 2 vulnerabilities:
+
+The Vulnerable file: "appsec-exercise.py"
 
 1- Fixed Lines
 

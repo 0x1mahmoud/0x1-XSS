@@ -10,13 +10,13 @@ I've chosen Python
 
 First Vulnerability(1), I've discovered Cross-Site Scripting (XSS) Vulnerability. Also, can be modified as Improper Neutralization of Input During Web Page Generation (Cross-site Scripting).
 once I have created a user and then logged in. I saw I can access the other users by just typing their username Instead of my username.
-Then I saw the source code the username self parameter so i have executed the XSS payload which I was able to print the user cookie in the attached picture
+Then I saw the source code the username self parameter so i have executed the XSS payload which I was able to print the "user cookie" in the attached picture
 In CWE:
 - CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
 
 Second Vulnerability(2), I discovered Server-Side Template Injection (SSTI) Vulnerability. Also, it can be modified as Improper Neutralization of Directives in Statically Saved Code (Static Code Injection).
 i was a user and able to see the DB config by executing the SSTI payload once I have entered I saw the configuration
-As well as I confirm that it prints the ID command and I saw it's a root in the attached picture
+As well as I confirm that it prints the ID command and I saw it's a "root" in the attached picture
 In CWE:
 - CWE-96: Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection')
 

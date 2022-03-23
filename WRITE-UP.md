@@ -35,7 +35,7 @@ Here the way of fixing the the 2 vulnerabilities:
 
 `User {{username}} does not exist` *the fixed line (1)*
 
-`return render_template_string(response, username), 404`  *the fixed line (2) *
+`return render_template_string(response, username), 404`  *the fixed line (2)*
 
 2- Fixing code section:
 
@@ -95,7 +95,7 @@ Here the way of fixing the the 2 vulnerabilities:
 
 `User {{username}} does not exist` *the fixed line (1)*
 
-`return render_template_string(response, username), 404`  *the fixed line (2) *
+`return render_template_string(response, username), 404`  *the fixed line (2)*
 
 2- Fixing code section:
 

@@ -30,7 +30,11 @@ http://127.0.0.1:8080/hackerone=%3Cimg%20src=pop%20onerror=alert(document.cookie
 
 ## Fix
 
-How would you fix this vulnerability? Provide a code snippet.
+A steps of fixing XSS Vulnerability:
+- Sanitize data input and ensuring all data is validated, filtered or escaped before echoing anything back to the user.
+- Give users the option to disable client-side scripts.
+- Redirect invalid requests.
+- Using the following: html.escape, render_template
 
 # \#2
 
@@ -59,4 +63,7 @@ In Server-Side Template Injection (SSTI) or Static Code Injection I've used the 
 
 ## Fix
 
-How would you fix this vulnerability? Provide a code snippet.
+Ways of fixing:
+
+1- The Templates should not be created from user-controlled input. User input should be passed to the template using template parameters.
+2- Sandboxing: execute user’s code in a sandboxed environment; though some of these environments can be bypassed, they are still considered a protection mechanism to reduce the risk of the SSTI vulnerability.

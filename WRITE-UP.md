@@ -9,7 +9,7 @@ What language did you choose for the exercise?
 ## Description
 
 Discovered Cross-Site Scripting (XSS) Vulnerability. Also, can be modified as Improper Neutralization of Input During Web Page Generation (Cross-site Scripting).
-once I have created a user and then logged in. Then I review the source code of the "appsec-exercise.py" and i noticed that the username self parameter so i have executed the XSS payload by using "img" method example: `<img src=x onclick=alert(1)>` which I was able to print the "user cookie"
+once I have created a user and then logged in. Then I review the source code of the "appsec-exercise.py" and i noticed that the username self parameter so i have executed the XSS payload by using "img" method example: `<img src=x onclick=alert(1)>` which I was able to popup number "1" on the page
 In CWE:
 - CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
 

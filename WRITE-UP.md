@@ -29,7 +29,11 @@ http://127.0.0.1:8080/hackerone=%3Cimg%20src=pop%20onerror=alert(document.cookie
 
 ## Fix
 
-Here the way of fixing the the 2 vulnerabilities
+Here the way of fixing the the 2 vulnerabilities:
+1- Fixed Lines
+`User {{username}} does not exist` //the fixed line (1)
+`return render_template_string(response, username), 404`  // the fixed line (2) 
+2- Fixing code section:
 ```
 @app.route('/<username>')
 def profile(username):
@@ -48,8 +52,9 @@ def profile(username):
         avatar = hashlib.md5(username.encode('utf8')).hexdigest()
         can_edit = current_user.is_authenticated and username == current_user.username
         return render_template('profile.html', user=user, avatar=avatar, can_edit=can_edit)
-
 ```
+
+
 
 # \#2
 
@@ -79,13 +84,28 @@ In Server-Side Template Injection (SSTI) or Static Code Injection I've used the 
 ## Fix
 
 
-Here the way of fixing the the 2 vulnerabilities
-
-   `User {{username}} does not exist` 
-   *The fixed line (1)*
-          `  </h1>
+Here the way of fixing the the 2 vulnerabilities:
+1- Fixed Lines
+`User {{username}} does not exist` //the fixed line (1)
+`return render_template_string(response, username), 404`  // the fixed line (2) 
+2- Fixing code section:
+```
+@app.route('/<username>')
+def profile(username):
+    user = user_with_username(username)
+    if user is None:
+        response = """
+            {% extends "base.html" %}
+            {% block content %}
+            <h1 class="title">
+                User {{username}} does not exist
+            </h1>
             {% endblock %}
-        """`
-        `return render_template_string(response, username), 404` 
-        *the fixed line (2) *
+        """
+        return render_template_string(response, username), 404
+    else:
+        avatar = hashlib.md5(username.encode('utf8')).hexdigest()
+        can_edit = current_user.is_authenticated and username == current_user.username
+        return render_template('profile.html', user=user, avatar=avatar, can_edit=can_edit)
+```
 

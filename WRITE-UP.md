@@ -81,9 +81,11 @@ In Server-Side Template Injection (SSTI) or Static Code Injection I've used the 
 
 Here the way of fixing the the 2 vulnerabilities
 
-   `User {{username}} does not exist` *The fixed line (1)*
+   `User {{username}} does not exist` 
+   *The fixed line (1)*
           `  </h1>
             {% endblock %}
         """`
-        `return render_template_string(response, username), 404` *the fixed line (2) *
+        `return render_template_string(response, username), 404` 
+        *the fixed line (2) *
 

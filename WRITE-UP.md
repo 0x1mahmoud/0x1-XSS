@@ -17,7 +17,8 @@ In CWE:
 Second Vulnerability(2), I discovered Server-Side Template Injection (SSTI) Vulnerability. Also, it can be modified as Improper Neutralization of Directives in Statically Saved Code (Static Code Injection).
 i was a user and able to see the DB config by executing the SSTI payload once I have entered I saw the configuration
 As well as I confirm that it prints the ID command and I saw it's a root in the attached picture
-The Vulnerability is CWE-96
+In CWE:
+- CWE-96: Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection')
 
 ## Impact
 

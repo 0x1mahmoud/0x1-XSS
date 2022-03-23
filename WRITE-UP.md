@@ -33,9 +33,9 @@ Here the way of fixing the the 2 vulnerabilities:
 
 1- Fixed Lines
 
-`User {{username}} does not exist` //the fixed line (1)
+`User {{username}} does not exist` *the fixed line (1)*
 
-`return render_template_string(response, username), 404`  // the fixed line (2) 
+`return render_template_string(response, username), 404`  *the fixed line (2) *
 
 2- Fixing code section:
 
@@ -90,10 +90,15 @@ In Server-Side Template Injection (SSTI) or Static Code Injection I've used the 
 
 
 Here the way of fixing the the 2 vulnerabilities:
+
 1- Fixed Lines
-`User {{username}} does not exist` //the fixed line (1)
-`return render_template_string(response, username), 404`  // the fixed line (2) 
+
+`User {{username}} does not exist` *the fixed line (1)*
+
+`return render_template_string(response, username), 404`  *the fixed line (2) *
+
 2- Fixing code section:
+
 ```
 @app.route('/<username>')
 def profile(username):
@@ -113,4 +118,3 @@ def profile(username):
         can_edit = current_user.is_authenticated and username == current_user.username
         return render_template('profile.html', user=user, avatar=avatar, can_edit=can_edit)
 ```
-

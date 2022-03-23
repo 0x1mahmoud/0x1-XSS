@@ -29,11 +29,27 @@ http://127.0.0.1:8080/hackerone=%3Cimg%20src=pop%20onerror=alert(document.cookie
 
 ## Fix
 
-A ways of fixing XSS Vulnerability:
-- Sanitize data input and ensuring all data is validated, filtered or escaped before echoing anything back to the user.
-- Give users the option to disable client-side scripts.
-- Redirect invalid requests.
-- Using the following: html.escape, render_template
+Here the way of fixing the the 2 vulnerabilities
+```
+@app.route('/<username>')
+def profile(username):
+    user = user_with_username(username)
+    if user is None:
+        response = """
+            {% extends "base.html" %}
+            {% block content %}
+            <h1 class="title">
+                User {{username}} does not exist
+            </h1>
+            {% endblock %}
+        """
+        return render_template_string(response, username), 404
+    else:
+        avatar = hashlib.md5(username.encode('utf8')).hexdigest()
+        can_edit = current_user.is_authenticated and username == current_user.username
+        return render_template('profile.html', user=user, avatar=avatar, can_edit=can_edit)
+
+```
 
 # \#2
 
@@ -62,7 +78,12 @@ In Server-Side Template Injection (SSTI) or Static Code Injection I've used the 
 
 ## Fix
 
-Ways of fixing Server-Side Template Injection (SSTI) Vulnerability:
 
-- The Templates should not be created from user-controlled input. User input should be passed to the template using template parameters.
-- Sandboxing: execute user’s code in a sandboxed environment; though some of these environments can be bypassed, they are still considered a protection mechanism to reduce the risk of the SSTI vulnerability.
+Here the way of fixing the the 2 vulnerabilities
+
+   `User {{username}} does not exist` *The fixed line (1)*
+          `  </h1>
+            {% endblock %}
+        """`
+        `return render_template_string(response, username), 404` *the fixed line (2) *
+

@@ -30,10 +30,15 @@ http://127.0.0.1:8080/hackerone=%3Cimg%20src=pop%20onerror=alert(document.cookie
 ## Fix
 
 Here the way of fixing the the 2 vulnerabilities:
+
 1- Fixed Lines
+
 `User {{username}} does not exist` //the fixed line (1)
+
 `return render_template_string(response, username), 404`  // the fixed line (2) 
+
 2- Fixing code section:
+
 ```
 @app.route('/<username>')
 def profile(username):
